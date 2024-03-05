@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Title>Eclypses.MteHttpClient</Title>
+		<PackageId>Eclypses.MteHttpClient</PackageId>
+		<Company>Eclypses Inc</Company>
+		<Description>A substitute for the HttpClient that protects all network traffic with the Eclypses MTE.
+Compatible with Eclypses MTE 4.x only.</Description>
+		<PackageOutputPath>D:\src\Sandbox\local.nuget</PackageOutputPath>
+		<FileVersion>1.0.4</FileVersion>
+		<AssemblyVersion>1.0.4</AssemblyVersion>
+		<Version>4.0.0</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>Eclypses Inc.</Authors>
+		<Copyright>Copyright Eclypses Inc. - 2024</Copyright>
+		<PackageProjectUrl>https://github.com/Eclypses/mte-http-client-blazor</PackageProjectUrl>
+		<PackageReleaseNotes>Upgraded to use a more secure handshake method and Eclypses MTE 4.0.0</PackageReleaseNotes>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.24" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+		<PackageReference Include="Microsoft.JSInterop" Version="6.0.24" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Link="README.md">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\mterelay-helper.js">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+	
+</Project>
